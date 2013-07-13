@@ -1,0 +1,166 @@
+
+/* ==========================================================================
+   Custom Fonts
+   ========================================================================== */
+
+
+// from fontsquirrel fontface generator
+//[link] http://www.fontsquirrel.com/fontface/generator
+
+@font-face {
+    font-family: 'Base';
+    src: url('/stylesheets/fonts/___.eot');
+    src: url('/stylesheets/fonts/___.eot?#iefix') format('embedded-opentype'),
+         url('/stylesheets/fonts/___.woff') format('woff'),
+         url('/stylesheets/fonts/___.ttf') format('truetype'),
+         url('/stylesheets/fonts/___.svg#___') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
+
+
+/* ==========================================================================
+   Custom Mixins
+   ========================================================================== */
+
+
+// default sizes
+@small: 12px;
+@normal: 15px;
+@medium: 30px;
+@large: 65px;
+
+
+//POSITIONING
+.abs(@z : 1) {
+    position: absolute;
+    z-index: @z;
+}
+.fixed(@z : 1) {
+    position: fixed;   
+    z-index: @z;
+}
+.relative(){
+  position: relative;
+}
+
+.hide {
+  display: none;
+}
+
+.noMargin {
+  margin: 0;
+}
+
+
+
+.base(@ls: 0) {
+    font-family: Base, Helvetica, Arial, Sans-Serif;
+    font-size: @normal;
+}
+
+.bold{
+  font-weight: bold;
+}
+.regular{
+  font-weight: normal;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+
+.normal(@s : @normal, @lh : 1.2, @ls: 0) {
+    font-size: @s; 
+    line-height: @lh;
+    letter-spacing: @ls;
+}
+.small(@s : @small, @lh : 1.3, @ls: 0) {
+    font-size: @s; 
+    line-height: @lh;
+    letter-spacing: @ls;
+}
+.medium(@s : @medium, @lh : 1.1, @ls: 0) {
+    font-size: @s; 
+    line-height: @lh;
+    letter-spacing: @ls;
+}
+.large(@s : @large, @lh : 1, @ls: -0.05em) {
+    font-size: @s; 
+    line-height: @lh;
+    letter-spacing: @ls;
+}
+.smooth{
+        -webkit-font-smoothing: antialiased;
+}
+.no-smooth{
+        -webkit-font-smoothing: subpixel-antialiased;
+}
+
+
+
+//COLOR
+.white {
+    color:@white;
+}
+.black {
+    color:@black;
+}
+
+// LINKS
+.mutedlink {
+  a {
+    color:@black;
+    text-decoration: none;
+    &:hover {
+      color:@grey;
+      text-decoration: none;
+    }
+  }
+}
+.colorlink(@color : @red) {
+  a {
+    color:@color;
+    text-decoration: none;
+    &:hover {
+      color:@black;
+      text-decoration: none;
+    }
+  }
+}
+.underlinedlink {
+  a {
+    color:@black;
+    text-decoration: underline;
+    &:hover {
+      color:@black;
+      text-decoration: none;
+    }
+  }
+
+}
+
+.cleanlist, .cleanul, .cleanol {
+  ul,ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+
+.icon(@file, @w : 18px, @al: center) {
+      @url : "/images/@{file}.png";
+      background: url(@url) left @al no-repeat;
+      padding-left: @w + 8px;
+      &:hover {
+        @urlh : "/images/@{file}_h.png";
+        background: url(@urlh) left @al no-repeat;
+        
+      }
+}

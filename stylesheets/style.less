@@ -1,0 +1,189 @@
+@import 'lib/normalize.less';
+@import 'lib/boilerplate.less';
+@import 'lib/grid.less';
+// @import 'lib/lesshat.less';
+@import 'custom.less';
+
+/*  ==========================================================================
+Variables
+========================================================================== */
+  //color
+  @red : #e00;
+  @white: #ffffff;
+  @lightgrey: #f0f0e9;
+  @grey : #cccccc;
+  @black: #000000;
+  //column system 
+  @columns: 5;
+  @column-width: 100;
+  @gutter-width: 10;
+  @total-width: 99.5%; // Switch from pixels to percentages
+
+  
+  // font sizes
+  @small: 12px;
+  @normal:15px;
+  @medium: 40px;
+  @large: 80px;
+
+
+
+/* ==========================================================================
+App
+========================================================================== */
+
+@margin : 20px;
+
+body {
+
+}
+
+.chromeframe {
+  background:@red;
+  color: @white;
+  .fixed(800);
+  width: 100%;
+  top:0;
+  margin: 0;
+  padding: 3px 10px;
+  .colorlink(@white);
+  line-height: 20px
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+Media Queries + Modernizr for Responsive Design.
+
+========================================================================== */
+
+@media only screen and  (min-width:1400px) and (min-height : 800px) {
+  // BIG MONITORS
+  body {
+    .normal(17px);
+  }
+
+}
+
+//TABLETS
+@media only screen and (max-width:1024) { 
+
+  .touch {
+
+  }
+}
+
+
+
+//MOBILE
+@media only screen and (max-width:590px), (max-height : 400px) { 
+  // iphone horizontal
+  .touch {
+    body{
+      .normal(14px);
+    } 
+
+
+    
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  // Mobile devices vertical
+  .touch{
+    body {
+      .normal(13px);
+    }
+
+
+
+
+
+
+
+  }
+}
+
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144) {
+  /* Style adjustments for high resolution devices */
+
+
+}
+
+/* ==========================================================================
+Print styles.
+Inlined to avoid required HTTP connection: h5bp.com/r
+========================================================================== */
+
+@media print {
+* {
+  background: transparent !important;
+  color: #000 !important; /* Black prints faster: h5bp.com/s */
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+a,
+a:visited {
+  text-decoration: underline;
+}
+
+a[href]:after {
+  content: " (" attr(href) ")";
+}
+
+abbr[title]:after {
+  content: " (" attr(title) ")";
+}
+
+/*
+* Don't show links for images, or javascript/internal links
+*/
+
+.ir a:after,
+a[href^="javascript:"]:after,
+a[href^="#"]:after {
+  content: "";
+}
+
+pre,
+blockquote {
+  border: 1px solid #999;
+  page-break-inside: avoid;
+}
+
+thead {
+  display: table-header-group; /* h5bp.com/t */
+}
+
+tr,
+img {
+page-break-inside: avoid;
+}
+
+img {
+max-width: 100% !important;
+}
+
+@page {
+margin: 0.5cm;
+}
+
+p,
+h2,
+h3 {
+orphans: 3;
+widows: 3;
+}
+
+h2,
+h3 {
+page-break-after: avoid;
+}
+}
